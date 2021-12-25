@@ -26,13 +26,15 @@ jobs:
     steps:
 
     - name: Checkout source code
-      uses: actions/checkout@v1
+      uses: actions/checkout@v2
       with:
         path: 'darkwizard242.syft'
+        fetch-depth: 0
 
     - name: SonarCloud Scan
       uses: sonarsource/sonarcloud-github-action@master
       with:
+        projectBaseDir: 'darkwizard242.syft'
         args: >
           -Dsonar.projectVersion=${{ github.ref }}_${{ github.run_number }}
       env:
@@ -68,7 +70,8 @@ jobs:
         pip3 install -U pip wheel ansible molecule[docker] docker ansible-lint flake8 pytest-testinfra
 
     - name: Execute Molecule test of role for ${{ matrix.IMAGE }}
-      run: ls -ltr && DISTRO=${{ matrix.IMAGE }} molecule test
+      working-directory: 'darkwizard242.syft'
+      run: DISTRO=${{ matrix.IMAGE }} molecule test
       env:
         PY_COLORS: '1'
         ANSIBLE_FORCE_COLOR: '1'
