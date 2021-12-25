@@ -1,0 +1,14 @@
+---
+# defaults file for syft
+
+syft_app: syft
+syft_desired_state: present
+syft_version: 0.34.0
+syft_os: linux
+syft_arch: amd64
+
+# For Debian/Ubuntu Family
+syft_debian_url: "https://github.com/anchore/{{ syft_app }}/releases/download/v{{ syft_version }}/{{ syft_app }}_{{ syft_version }}_{{ syft_os }}_{{ syft_arch }}.deb"
+
+# For EL Family
+syft_el_url: "https://github.com/anchore/{{ syft_app }}/releases/download/v{{ syft_version }}/{{ syft_app }}_{{ syft_version }}_{{ syft_os }}_{{ syft_arch }}.rpm"
