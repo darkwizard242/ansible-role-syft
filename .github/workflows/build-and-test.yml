@@ -68,7 +68,7 @@ jobs:
         pip3 install -U pip wheel ansible molecule[docker] docker ansible-lint flake8 pytest-testinfra
 
     - name: Execute Molecule test of role for ${{ matrix.IMAGE }}
-      run: DISTRO=${{ matrix.IMAGE }} molecule test
+      run: ls -ltr && DISTRO=${{ matrix.IMAGE }} molecule test
       env:
         PY_COLORS: '1'
         ANSIBLE_FORCE_COLOR: '1'
