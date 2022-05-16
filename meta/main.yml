@@ -10,12 +10,14 @@ galaxy_info:
   platforms:
     - name: Ubuntu
       versions:
+        - jammy
         - bionic
         - focal
     - name: Debian
       versions:
-        - stretch
+        - bullseye
         - buster
+        - stretch
     - name: EL
       versions:
         - 7
