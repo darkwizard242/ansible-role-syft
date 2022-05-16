@@ -47,9 +47,9 @@ jobs:
     name: Build & Test
     runs-on: ubuntu-20.04
     strategy:
-      max-parallel: 6
+      max-parallel: 10
       matrix:
-        IMAGE: [ubuntu-20.04, ubuntu-18.04, rockylinux-8, centos-7, debian-buster, debian-stretch]
+        IMAGE: [ubuntu-22.04, ubuntu-20.04, ubuntu-18.04, rockylinux-8, centos-7, debian-bullseye, debian-buster, debian-stretch]
 
     steps:
 
