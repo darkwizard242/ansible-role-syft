@@ -17,7 +17,7 @@ Available variables are listed below (located in `defaults/main.yml`):
 ```yaml
 syft_app: syft
 syft_desired_state: present
-syft_version: 0.48.1
+syft_version: 0.49.0
 syft_os: linux
 syft_arch: amd64
 
@@ -34,7 +34,7 @@ Variable           | Description
 ------------------ | ----------------------------------------------------------------------------------------------------------------------------------------------------
 syft_app           | Defines the app to install i.e. **syft**
 syft_desired_state | Defined to dynamically chose whether to install (i.e. either `present` or `latest`) or uninstall (i.e. `absent`) the package. Defaults to `present`.
-syft_version       | Defined to dynamically fetch the desired version to install. Defaults to: **0.48.1**
+syft_version       | Defined to dynamically fetch the desired version to install. Defaults to: **0.49.0**
 syft_os            | Defines os type. Used for obtaining the correct type of binaries based on OS type. Defaults to: **linux**
 syft_arch          | Defines os architecture. Used for obtaining the correct type of binaries based on OS System Architecture. Defaults to: **amd64**
 syft_debian_url    | Defines URL to download the 'deb' package from for Debian/Ubuntu family systems.
