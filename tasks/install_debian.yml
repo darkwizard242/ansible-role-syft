@@ -2,6 +2,6 @@
 # tasks file for syft | Debian/Ubuntu Family
 
 - name: Debian/Ubuntu Family | Downloading and installing {{ syft_app }} {{ syft_version }}
-  apt:
+  ansible.builtin.apt:
     deb: "{{ syft_debian_url }}"
     state: "{{ syft_desired_state }}"

@@ -7,7 +7,7 @@ testinfra_hosts = testinfra.utils.ansible_runner.AnsibleRunner(
 
 
 PACKAGE = 'syft'
-PACKAGE_BINARY = "/usr/local/bin/syft"
+PACKAGE_BINARY = "/usr/bin/syft"
 
 
 def test_syft_package_installed(host):
