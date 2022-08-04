@@ -2,7 +2,7 @@
 # tasks file for syft | EL Family
 
 - name: EL Family | Downloading and installing {{ syft_app }} {{ syft_version }}
-  yum:
+  ansible.builtin.yum:
     name: "{{ syft_el_url }}"
     state: "{{ syft_desired_state }}"
     disable_gpg_check: yes
