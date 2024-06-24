@@ -4,11 +4,19 @@
 syft_app: syft
 syft_desired_state: present
 syft_version: 1.8.0
-syft_os: linux
-syft_arch: amd64
+syft_os: "{{ ansible_system | lower }}"
+syft_architecture_map:
+  amd64: amd64
+  arm: arm64
+  x86_64: amd64
+  armv6l: armv6
+  armv7l: armv7
+  aarch64: arm64
+  32-bit: "386"
+  64-bit: amd64
 
 # For Debian/Ubuntu Family
-syft_debian_url: "https://github.com/anchore/{{ syft_app }}/releases/download/v{{ syft_version }}/{{ syft_app }}_{{ syft_version }}_{{ syft_os }}_{{ syft_arch }}.deb"
+syft_debian_url: "https://github.com/anchore/{{ syft_app }}/releases/download/v{{ syft_version }}/{{ syft_app }}_{{ syft_version }}_{{ syft_os }}_{{ syft_architecture_map[ansible_architecture] }}.deb"
 
 # For EL Family
-syft_el_url: "https://github.com/anchore/{{ syft_app }}/releases/download/v{{ syft_version }}/{{ syft_app }}_{{ syft_version }}_{{ syft_os }}_{{ syft_arch }}.rpm"
+syft_el_url: "https://github.com/anchore/{{ syft_app }}/releases/download/v{{ syft_version }}/{{ syft_app }}_{{ syft_version }}_{{ syft_os }}_{{ syft_architecture_map[ansible_architecture] }}.rpm"
