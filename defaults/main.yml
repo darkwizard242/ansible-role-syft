@@ -3,7 +3,7 @@
 
 syft_app: syft
 syft_desired_state: present
-syft_version: 1.11.1
+syft_version: 1.12.2
 syft_os: "{{ ansible_system | lower }}"
 syft_architecture_map:
   amd64: amd64
