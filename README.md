@@ -17,7 +17,7 @@ Available variables are listed below (located in `defaults/main.yml`):
 ```yaml
 syft_app: syft
 syft_desired_state: present
-syft_version: 1.38.0
+syft_version: 1.38.2
 syft_os: "{{ ansible_system | lower }}"
 syft_architecture_map:
   amd64: amd64
@@ -42,7 +42,7 @@ Variable              | Description
 --------------------- | ----------------------------------------------------------------------------------------------------------------------------------------------------
 syft_app              | Defines the app to install i.e. **syft**
 syft_desired_state    | Defined to dynamically chose whether to install (i.e. either `present` or `latest`) or uninstall (i.e. `absent`) the package. Defaults to `present`.
-syft_version          | Defined to dynamically fetch the desired version to install. Defaults to: **1.38.0**
+syft_version          | Defined to dynamically fetch the desired version to install. Defaults to: **1.38.2**
 syft_os               | Defines os type. Used for obtaining the correct type of binaries based on OS type.
 syft_architecture_map | Defines os architecture. Used for obtaining the correct type of binaries based on OS System Architecture.
 syft_debian_url       | Defines URL to download the 'deb' package from for Debian/Ubuntu family systems.
